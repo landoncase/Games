@@ -1,0 +1,736 @@
+import webbrowser
+from _random import Random
+from random import randrange
+def main():
+    ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total = firstprintboard()
+    
+    prompt1(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total)
+    
+def prompt1(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total):
+    print("Type 'inst' for help with rules.") 
+    roll = input("Type 'r' to roll the dice:\n")
+    if roll == 'r':
+        turn1 (ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total)
+    #elif roll == 'board':printboard(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total)'''
+    elif roll == 'inst':
+        instructions()
+    else:
+        prompt1(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total)
+def turn2 (ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5):
+    #print(diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    hold1 = input("Do you want to hold die 1 ? 1 = Yes , any other key = No")
+    hold2 = input("Do you want to hold die 2 ? 1 = Yes , any other key = No")
+    hold3 = input("Do you want to hold die 3 ? 1 = Yes , any other key = No")
+    hold4 = input("Do you want to hold die 4 ? 1 = Yes , any other key = No")
+    hold5 = input("Do you want to hold die 5 ? 1 = Yes , any other key = No")
+    prompt2 (ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1,hold2,hold3,hold4,hold5,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+def prompt2(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1,hold2,hold3,hold4,hold5,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5):
+    
+    print("Type 'board' to see your scoreboard.\n Type 'inst' for help with rules.") 
+    roll = input("Type 'r' to roll the dice:\n")
+    if roll == 'r':
+        roll2 (ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1,hold2,hold3,hold4,hold5,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+        '''elif roll == 'board':printboard(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total)'''
+    elif roll == 'inst':
+        instructions()
+    else:
+        prompt2(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1,hold2,hold3,hold4,hold5,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+def roll2(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1,hold2,hold3,hold4,hold5,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5):
+    
+    if hold1 == '1':
+        dicerollpic1(diceroll1)
+    else:
+        diceroll1 = (randrange(1,7))
+        dicerollpic1(diceroll1)
+        
+    if hold2 == '1':
+        dicerollpic2(diceroll2)
+    else:
+        diceroll2 = (randrange(1,7))
+        dicerollpic2(diceroll2)
+    
+    if hold3 == '1':
+        dicerollpic3(diceroll3)
+    else:
+        diceroll3 = (randrange(1,7))
+        dicerollpic3(diceroll3)
+    
+    if hold4 == '1':
+        dicerollpic4(diceroll4)
+    else:
+        diceroll4 = (randrange(1,7))
+        dicerollpic4(diceroll4)
+    
+    if hold5 == '1':
+        dicerollpic5(diceroll5)
+    else:
+        diceroll5 = (randrange(1,7))
+        dicerollpic5(diceroll5)
+    turn3(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+        
+          
+def turn3(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5):
+    hold1 = input("Do you want to hold die 1 ? 1 = Yes , any other key = No")
+    hold2 = input("Do you want to hold die 2 ? 1 = Yes , any other key = No")
+    hold3 = input("Do you want to hold die 3 ? 1 = Yes , any other key = No")
+    hold4 = input("Do you want to hold die 4 ? 1 = Yes , any other key = No")
+    hold5 = input("Do you want to hold die 5 ? 1 = Yes , any other key = No")
+    prompt3(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1, hold2, hold3, hold4, hold5, diceroll1, diceroll2, diceroll3, diceroll4, diceroll5)
+
+def prompt3(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1, hold2, hold3, hold4, hold5, diceroll1, diceroll2, diceroll3, diceroll4, diceroll5):
+    print("Type 'board' to see your scoreboard.\n Type 'inst' for help with rules.") 
+    roll = input("Type 'roll' to roll the dice:\n")
+    if roll == 'r':
+        roll3 (ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1,hold2,hold3,hold4,hold5,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+        '''elif roll == 'board':printboard(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total)'''
+    elif roll == 'inst':
+        instructions()
+    else:
+        prompt3(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1, hold2, hold3, hold4, hold5, diceroll1, diceroll2, diceroll3, diceroll4, diceroll5)
+def roll3(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,hold1,hold2,hold3,hold4,hold5,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5):
+    printboard(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total)
+    if hold1 == '1':
+        dicerollpic1(diceroll1)
+    else:
+        diceroll1 = (randrange(1,7))
+        dicerollpic1(diceroll1)
+        
+    if hold2 == '1':
+        dicerollpic2(diceroll2)
+    else:
+        diceroll2 = (randrange(1,7))
+        dicerollpic2(diceroll2)
+    
+    if hold3 == '1':
+        dicerollpic3(diceroll3)
+    else:
+        diceroll3 = (randrange(1,7))
+        dicerollpic3(diceroll3)
+    
+    if hold4 == '1':
+        dicerollpic4(diceroll4)
+    else:
+        diceroll4 = (randrange(1,7))
+        dicerollpic4(diceroll4)
+    
+    if hold5 == '1':
+        dicerollpic5(diceroll5)
+    else:
+        diceroll5 = (randrange(1,7))
+        dicerollpic5(diceroll5)
+        
+    
+    boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+def turn1(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total):
+    diceroll1,diceroll2,diceroll3,diceroll4,diceroll5 = dicerollfirst()
+    
+    turn2(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+
+        
+def boardwrite (ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5):
+    print("KEY:ones = 1,twos = 2,threes = 3,fours = 4,fives = 5,sixes = 6, kindof3  = k3 ,kindof4 = k4,fullhouse = fh,small = sm")
+    print(",large = lg, yahtzee = Y,chance = c")
+
+    userinput = input("Where do you want to record the score?")
+    
+    
+    
+    
+    #Ones Check
+    if userinput == '1' and ones == 'XX':
+        ones = 0
+        if diceroll1 == 1:
+            ones += 1
+        if diceroll2 == 1:
+            ones += 1
+        if diceroll3 == 1:
+            ones += 1
+        if diceroll4 == 1:
+            ones += 1
+        if diceroll5 == 1:
+            ones += 1
+    elif userinput =='1' and ones != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    #Twos Check
+    elif userinput == '2' and twos == 'XX':
+        twos = 0
+        if diceroll1 == 2:
+            twos += 2
+        if diceroll2 == 2:
+            twos += 2
+        if diceroll3 == 2:
+            twos += 2
+        if diceroll4 == 2:
+            twos += 2
+        if diceroll5 == 2:
+            twos += 2
+    elif userinput =='2' and twos != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+    #Threes Check
+    elif userinput == '3' and threes == 'XX':
+        threes = 0
+        if diceroll1 == 3:
+            threes += 3
+        if diceroll2 == 3:
+            threes += 3
+        if diceroll3 == 3:
+            threes += 3
+        if diceroll4 == 3:
+            threes += 3
+        if diceroll5 == 3:
+            threes += 3
+    elif userinput =='3' and threes != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+    #Fours Check
+    elif userinput == '4' and fours == 'XX':
+        fours = 0
+        if diceroll1 == 4:
+            fours += 4
+        if diceroll2 == 4:
+            fours += 4
+        if diceroll3 == 4:
+            fours += 4
+        if diceroll4 == 4:
+            fours += 4
+        if diceroll5 == 4:
+            fours += 4
+    elif userinput =='4' and fours != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)        
+    
+    #Fives Check
+    elif userinput == '5' and fives == 'XX':
+        fives = 0
+        if diceroll1 == 5:
+            fives += 5
+        if diceroll2 == 5:
+            fives += 5
+        if diceroll3 == 5:
+            fives += 5
+        if diceroll4 == 5:
+            fives += 5
+        if diceroll5 == 5:
+            fives += 5
+    elif userinput =='5' and fives != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)       
+    
+    #Sixes Check
+    elif userinput == '6' and sixes == 'XX':
+        sixes = 0
+        if diceroll1 == 6:
+            sixes += 6
+        if diceroll2 == 6:
+            sixes += 6
+        if diceroll3 == 6:
+            sixes += 6
+        if diceroll4 == 6:
+            sixes += 6
+        if diceroll5 == 6:
+            sixes += 6
+    elif userinput =='6' and sixes != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+    # 3 of a kind
+    elif userinput == 'k3' and kindof3 == 'XX':
+        # check if dice1 has a least two other matches
+        kindof3 = 0
+        countk3 = 1
+        if diceroll1  == diceroll2:
+            countk3 +=1
+        if diceroll1  == diceroll3:
+            countk3 +=1
+        if diceroll1  == diceroll4:
+            countk3 +=1
+        if diceroll1  == diceroll5:
+            countk3 +=1
+        if countk3 >= 3:
+            kindof3 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+        
+        # check if dice2 has a least two other matches
+        countk3 = 1
+        if diceroll2  == diceroll1:
+            countk3 +=1
+        if diceroll2  == diceroll3:
+            countk3 +=1
+        if diceroll2  == diceroll4:
+            countk3 +=1
+        if diceroll2  == diceroll5:
+            countk3 +=1
+        if countk3 >= 3:
+            kindof3 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+            
+        
+        # check if dice3 has a least two other matches
+        countk3 = 1
+        if diceroll3  == diceroll1:
+            countk3 +=1
+        if diceroll3  == diceroll2:
+            countk3 +=1
+        if diceroll3  == diceroll4:
+            countk3 +=1
+        if diceroll3  == diceroll5:
+            countk3 +=1
+        if countk3 >= 3:
+            kindof3 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+            
+            
+        # check if dice4 has a least two other matches
+        countk3 = 1
+        if diceroll4  == diceroll1:
+            countk3 +=1
+        if diceroll4  == diceroll2:
+            countk3 +=1
+        if diceroll4  == diceroll3:
+            countk3 +=1
+        if diceroll4  == diceroll5:
+            countk3 +=1
+        if countk3 >= 3:
+            kindof3 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+            
+            
+        # check if dice5 has a least two other matches
+        countk3 = 1
+        if diceroll5  == diceroll1:
+            countk3 +=1
+        if diceroll5  == diceroll2:
+            countk3 +=1
+        if diceroll5  == diceroll3:
+            countk3 +=1
+        if diceroll5  == diceroll4:
+            countk3 +=1
+        if countk3 >= 3:
+            kindof3 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+        
+    elif userinput =='k3' and kindof3 != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+    #4 of a Kind
+    elif userinput == 'k4' and kindof4 == 'XX':
+        # check if dice1 has a least three other matches
+        kindof4 = 0
+        countk4 = 1
+        if diceroll1  == diceroll2:
+            countk4 +=1
+        if diceroll1  == diceroll3:
+            countk4 +=1
+        if diceroll1  == diceroll4:
+            countk4 +=1
+        if diceroll1  == diceroll5:
+            countk4 +=1
+        if countk4 >= 4:
+            kindof4 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+        
+        # check if dice2 has a least three other matches
+        countk4 = 1
+        if diceroll2  == diceroll1:
+            countk4 +=1
+        if diceroll2  == diceroll3:
+            countk4 +=1
+        if diceroll2  == diceroll4:
+            countk4 +=1
+        if diceroll2  == diceroll5:
+            countk4 +=1
+        if countk4 >= 4:
+            kindof4 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+            
+        
+        # check if dice3 has a least three other matches
+        countk4 = 1
+        if diceroll3  == diceroll1:
+            countk4 +=1
+        if diceroll3  == diceroll2:
+            countk4 +=1
+        if diceroll3  == diceroll4:
+            countk4 +=1
+        if diceroll3  == diceroll5:
+            countk4 +=1
+        if countk4 >= 3:
+            kindof4 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+            
+            
+        # check if dice4 has a least three other matches
+        countk4 = 1
+        if diceroll4  == diceroll1:
+            countk4 +=1
+        if diceroll4  == diceroll2:
+            countk4 +=1
+        if diceroll4  == diceroll3:
+            countk4 +=1
+        if diceroll4  == diceroll5:
+            countk4 +=1
+        if countk4 >= 4:
+            kindof4 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+            
+            
+        # check if dice5 has a least three other matches
+        countk4 = 1
+        if diceroll5  == diceroll1:
+            countk4 +=1
+        if diceroll5  == diceroll2:
+            countk4 +=1
+        if diceroll5  == diceroll3:
+            countk4 +=1
+        if diceroll5  == diceroll4:
+            countk4 +=1
+        if countk4 >= 4:
+            kindof4 = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+        
+    elif userinput =='k4' and kindof4 != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5) 
+    
+    #DEBUGG# check for full house
+    elif userinput == 'fh' and fullhouse == "XX":
+        fullhouse  = 0
+        countfh = 0
+        if diceroll1 == diceroll2:
+            countfh +=1
+        if diceroll1  == diceroll3:
+            countfh +=1
+        if diceroll1  == diceroll4:
+            countfh +=1
+        if diceroll1  == diceroll5:
+            countfh +=1
+        
+        if diceroll2 == diceroll1:
+            countfh +=1
+        if diceroll2  == diceroll3:
+            countfh +=1
+        if diceroll2  == diceroll4:
+            countfh +=1
+        if diceroll2  == diceroll5:
+            countfh +=1
+       
+        if diceroll3 == diceroll1:
+            countfh +=1
+        if diceroll3  == diceroll2:
+            countfh +=1
+        if diceroll3  == diceroll4:
+            countfh +=1
+        if diceroll3  == diceroll5:
+            countfh +=1
+           
+        if diceroll4 == diceroll1:
+            countfh +=1
+        if diceroll4  == diceroll2:
+            countfh +=1
+        if diceroll4  == diceroll3:
+            countfh +=1
+        if diceroll4  == diceroll5:
+            countfh +=1
+            
+        if diceroll5 == diceroll1:
+            countfh +=1
+        if diceroll5  == diceroll2:
+            countfh +=1
+        if diceroll5  == diceroll3:
+            countfh +=1
+        if diceroll5  == diceroll4:
+            countfh +=1
+         
+        if countfh == 8:
+            fullhouse = 25 
+    elif userinput =='k4' and kindof4 != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)    
+        
+    # check for small straight
+    elif userinput == "sm" and small == 'XX':
+        small = 0
+        countsm = 0
+        sumnum = diceroll1 + diceroll2 +diceroll3 + diceroll4 + diceroll5
+        if diceroll5  == diceroll1:
+            countsm +=1
+        if diceroll5  == diceroll2:
+            countsm +=1
+        if diceroll5  == diceroll3:
+            countsm +=1
+        if diceroll5  == diceroll4:
+            countsm +=1
+        if countsm <= 1:
+            small = 30   
+    elif userinput =='sm' and small != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+    
+    # check for large straight
+    elif userinput == "lg" and large == 'XX':
+        large = 0 
+        countlg = diceroll1 + diceroll2 +diceroll3 + diceroll4 + diceroll5
+        if countlg == 15 or countlg == 20:
+            large = 40   
+    elif userinput =='lg' and large != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+    #check for Yahtzee
+    elif userinput == "Y" and yahtzee == 'XX':
+        yahtzee = 0
+        county = 1
+        if diceroll5  == diceroll1:
+            county +=1
+        if diceroll5  == diceroll2:
+            county +=1
+        if diceroll5  == diceroll3:
+            county +=1
+        if diceroll5  == diceroll4:
+            county +=1
+        if county == 5:
+            yahtzee = 50
+    elif userinput == "Y" and yahtzee == 50: 
+        county = 1
+        if diceroll5  == diceroll1:
+            county +=1
+        if diceroll5  == diceroll2:
+            county +=1
+        if diceroll5  == diceroll3:
+            county +=1
+        if diceroll5  == diceroll4:
+            county +=1
+        if county == 5:
+            yahtzee = 100
+    elif userinput == "Y" and yahtzee == 100: 
+        county = 1
+        if diceroll5  == diceroll1:
+            county +=1
+        if diceroll5  == diceroll2:
+            county +=1
+        if diceroll5  == diceroll3:
+            county +=1
+        if diceroll5  == diceroll4:
+            county +=1
+        if county == 5:
+            yahtzee = 150   
+    elif userinput =='Y' and yahtzee == 0:
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+    #Check for Chance
+    elif userinput == 'c': #and chance == 'XX':
+        chance = diceroll1 + diceroll2 + diceroll3 + diceroll4 + diceroll5
+    elif userinput =='c' and chance != 'XX':
+        print("Not a valid move.")
+        boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    else:boardwrite(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total,diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    #check for completed top section and check for bonus and subtotal
+    if ones != 'XX' and twos != 'XX' and threes != 'XX' and fours != 'XX' and fives != 'XX' and sixes != 'XX':
+            if ones + twos + threes + fours + fives + sixes >= 63:
+                bonus = 35
+                uppersubtotal = ones + twos + threes + fours + fives + sixes + bonus
+            else:
+                bonus = 0
+                uppersubtotal = ones + twos + threes + fours + fives + sixes + bonus
+    
+    #check for completed bottom section and subtotal
+    if kindof3 != 'XX' and kindof4 !='XX' and fullhouse != 'XX' and small != 'XX' and large != 'XX' and yahtzee != 'XX' and chance != 'XX':
+        lowersubtotal = kindof3 + kindof4 + fullhouse + small + large + yahtzee + chance 
+    
+    #Check for end for game
+    if lowersubtotal != "XX" and uppersubtotal != 'XX':
+        total = lowersubtotal + uppersubtotal
+        print('You have scored [] points!!!' ,format(total))
+        
+       
+    # prints board after the value has been entered
+    ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total = printboard(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total)
+    prompt1(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,small,large,yahtzee,chance,lowersubtotal,total)
+    
+def dicerollfirst():
+    diceroll1 = (randrange(1,7))
+    diceroll2 = (randrange(1,7))
+    diceroll3 = (randrange(1,7))
+    diceroll4 = (randrange(1,7))
+    diceroll5 = (randrange(1,7))
+    dicerollpic1(diceroll1)
+    dicerollpic2(diceroll2)
+    dicerollpic3(diceroll3)
+    dicerollpic4(diceroll4)
+    dicerollpic5(diceroll5)
+    return(diceroll1,diceroll2,diceroll3,diceroll4,diceroll5)
+    
+def dicerollpic1(diceroll1): 
+      if diceroll1 == 1:
+        print("┌-------┐\n|       |\n|   █   |  #1\n|       |\n└-------┘")
+      elif diceroll1 == 2:
+         print ("┌-------┐\n|     █ |\n|       |  #1\n| █     |\n└-------┘")
+      elif diceroll1 == 3:
+         print ("┌-------┐\n|     █ |\n|   █   |  #1\n| █     |\n└-------┘")
+      elif diceroll1 == 4:
+         print ("┌-------┐\n| █   █ |\n|       |  #1\n| █   █ |\n└-------┘")
+      elif diceroll1 == 5:
+         print ("┌-------┐\n| █   █ |\n|   █   |  #1\n| █   █ |\n└-------┘")
+      elif diceroll1 == 6:
+         print ("┌-------┐\n| █   █ |\n| █   █ |  #1\n| █   █ |\n└-------┘")
+      return 
+
+def dicerollpic2(diceroll2): 
+      if diceroll2 == 1:
+        print("┌-------┐\n|       |\n|   █   |  #2\n|       |\n└-------┘")
+      elif diceroll2 == 2:
+         print ("┌-------┐\n|     █ |\n|       |  #2\n| █     |\n└-------┘")
+      elif diceroll2 == 3:
+         print ("┌-------┐\n|     █ |\n|   █   |  #2\n| █     |\n└-------┘")
+      elif diceroll2 == 4:
+         print ("┌-------┐\n| █   █ |\n|       |  #2\n| █   █ |\n└-------┘")
+      elif diceroll2 == 5:
+         print ("┌-------┐\n| █   █ |\n|   █   |  #2\n| █   █ |\n└-------┘")
+      elif diceroll2 == 6:
+         print ("┌-------┐\n| █   █ |\n| █   █ |  #2\n| █   █ |\n└-------┘")
+      return
+
+def dicerollpic3(diceroll3): 
+      if diceroll3 == 1:
+        print("┌-------┐\n|       |\n|   █   |  #3\n|       |\n└-------┘")
+      elif diceroll3 == 2:
+         print ("┌-------┐\n|     █ |\n|       |  #3\n| █     |\n└-------┘")
+      elif diceroll3 == 3:
+         print ("┌-------┐\n|     █ |\n|   █   |  #3\n| █     |\n└-------┘")
+      elif diceroll3 == 4:
+         print ("┌-------┐\n| █   █ |\n|       |  #3\n| █   █ |\n└-------┘")
+      elif diceroll3 == 5:
+         print ("┌-------┐\n| █   █ |\n|   █   |  #3\n| █   █ |\n└-------┘")
+      elif diceroll3 == 6:
+         print ("┌-------┐\n| █   █ |\n| █   █ |  #3\n| █   █ |\n└-------┘")
+      return 
+def dicerollpic4(diceroll4): 
+      if diceroll4 == 1:
+        print("┌-------┐\n|       |\n|   █   |  #4\n|       |\n└-------┘")
+      elif diceroll4 == 2:
+         print ("┌-------┐\n|     █ |\n|       |  #4\n| █     |\n└-------┘")
+      elif diceroll4 == 3:
+         print ("┌-------┐\n|     █ |\n|   █   |  #4\n| █     |\n└-------┘")
+      elif diceroll4 == 4:
+         print ("┌-------┐\n| █   █ |\n|       |  #4\n| █   █ |\n└-------┘")
+      elif diceroll4 == 5:
+         print ("┌-------┐\n| █   █ |\n|   █   |  #4\n| █   █ |\n└-------┘")
+      elif diceroll4 == 6:
+         print ("┌-------┐\n| █   █ |\n| █   █ |  #4\n| █   █ |\n└-------┘")
+      return
+def dicerollpic5(diceroll5): 
+      if diceroll5 == 1:
+        print("┌-------┐\n|       |\n|   █   |  #5\n|       |\n└-------┘")
+      elif diceroll5 == 2:
+         print ("┌-------┐\n|     █ |\n|       |  #5\n| █     |\n└-------┘")
+      elif diceroll5 == 3:
+         print ("┌-------┐\n|     █ |\n|   █   |  #5\n| █     |\n└-------┘")
+      elif diceroll5 == 4:
+         print ("┌-------┐\n| █   █ |\n|       |  #5\n| █   █ |\n└-------┘")
+      elif diceroll5 == 5:
+         print ("┌-------┐\n| █   █ |\n|   █   |  #5\n| █   █ |\n└-------┘")
+      elif diceroll5 == 6:
+         print ("┌-------┐\n| █   █ |\n| █   █ |  #5\n| █   █ |\n└-------┘")
+      return
+def firstprintboard():
+
+    ones = 'XX'
+    twos = 'XX'
+    threes= 'XX'
+    fours ='XX'
+    fives='XX'
+    sixes='XX'
+    uppersubtotal = 'XX'
+    bonus = 'XX'
+    kindof3 = 'XX'
+    kindof4 ='XX'
+    fullhouse = 'XX'
+    small = 'XX'
+    large = 'XX'
+    yahtzee = 'XX'
+    chance = 'XX'
+    lowersubtotal ='XX'
+    total = 'XX'
+    
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n    ONES       {}     \
+    3 OF KIND    {}\n └________┘└________┘   └________┘└________┘".format(ones,kindof3))
+    
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n    TWOS       {}     \
+    4 OF KIND   {}\n └________┘└________┘   └________┘└________┘".format(twos,kindof4))
+    
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   THREES      {}    \
+    FULL HOUSE   {}\n └________┘└________┘   └________┘└________┘".format(threes,fullhouse))
+    
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   FOURS       {}      \
+    SM Str      {}\n └________┘└________┘   └________┘└________┘".format(fours,small))
+    
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   FIVES       {}      \
+    LG Str      {}\n └________┘└________┘   └________┘└________┘".format(fives,large))
+    
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   SIXES       {}     \
+    YAHTZEE    {}\n └________┘└________┘   └________┘└________┘".format(sixes,yahtzee))
+    
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   BONUS       {}     \
+    CHANCE    {}\n └________┘└________┘   └________┘└________┘".format(bonus,chance))
+    
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n  SUBTOTAL     {}    \
+    SUBTOTAL     {}\n └________┘└________┘   └________┘└________┘".format(uppersubtotal,lowersubtotal))
+    print("\n            ┌--------┐┌--------┐\n              TOTAL       {}   \n            └________┘└________┘\n".format(total),end = " ")
+    
+    return(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total)
+    
+def printboard(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total):
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n    ONES       {}   \
+    3 OF KIND     {}\n └________┘└________┘   └________┘└________┘".format(ones,kindof3))
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n    TWOS       {}   \
+    4 OF KIND     {}\n └________┘└________┘   └________┘└________┘".format(twos,kindof4))
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   THREES      {}   \
+    FULL HOUSE    {}\n └________┘└________┘   └________┘└________┘".format(threes,fullhouse))
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   FOURS       {}     \
+    SM Str      {}\n └________┘└________┘   └________┘└________┘".format(fours,small))
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   FIVES       {}     \
+    LG Str      {}\n └________┘└________┘   └________┘└________┘".format(fives,large))
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   SIXES       {}    \
+    YAHTZEE      {}\n └________┘└________┘   └________┘└________┘".format(sixes,yahtzee))
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n   BONUS       {}     \
+    CHANCE      {}\n └________┘└________┘   └________┘└________┘".format(bonus,chance))
+    print(" ┌--------┐┌--------┐   ┌--------┐┌--------┐\n  SUBTOTAL     {}    \
+    SUBTOTAL     {}\n └________┘└________┘   └________┘└________┘".format(uppersubtotal,lowersubtotal))
+    print("\n            ┌--------┐┌--------┐\n              TOTAL       {}   \n            └________┘└________┘\n".format(total))
+    return(ones,twos,threes,fours,fives,sixes,uppersubtotal,bonus,kindof3,kindof4,fullhouse,
+               small,large,yahtzee,chance,lowersubtotal,total)
+if __name__ == "__main__": main()
